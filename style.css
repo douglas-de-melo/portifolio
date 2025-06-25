@@ -1,0 +1,242 @@
+/* ===== Variables & Reset ===== */
+:root {
+    --preto: #1a1a1a;
+    --laranja: #f9a825;
+    --cinza-claro: #e0e0e0;
+    --branco: #ffffff;
+    --cinza-escuro: #333333;
+    --fonte: 'Segoe UI', Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte);
+    line-height: 1.5;
+    background: var(--preto);
+    color: var(--branco);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Global Elements ===== */
+a {
+    color: var(--laranja);
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+/* ===== Header ===== */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2rem;
+    background: var(--preto);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--laranja);
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-list a {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.nav-list a:hover {
+    color: var(--laranja);
+}
+
+/* ===== Home Page ===== */
+.home-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    max-width: 960px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+.intro-text h1 {
+    font-size: 3.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--laranja);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--cinza-claro);
+}
+
+.intro-photo img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    border: 4px solid var(--laranja);
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== Sobre Page ===== */
+.about-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-photo img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 2px solid var(--laranja);
+    object-fit: cover;
+}
+
+.about-text {
+    background: var(--cinza-escuro);
+    padding: 1.5rem;
+    border-left: 6px solid var(--laranja);
+    max-width: 700px;
+}
+
+.about-text h2 {
+    margin-bottom: 1rem;
+    color: var(--laranja);
+}
+
+/* ===== Projetos Page ===== */
+.projects-main {
+    padding: 2rem;
+    flex: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.projects-main h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--laranja);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--cinza-escuro);
+    padding: 1.5rem;
+    border-top: 6px solid var(--laranja);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.btn {
+    align-self: flex-start;
+    padding: 0.5rem 1rem;
+    background: var(--laranja);
+    color: var(--preto);
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+/* ===== contato page ===== */
+ .contato-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+        }
+        .contato-card {
+            background: var(--cinza-escuro);
+            padding: 2rem;
+            border-left: 6px solid var(--laranja);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        .contato-card h2 {
+            margin-bottom: 1rem;
+            color: var(--laranja);
+        }
+        .contato-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .contato-card li {
+            margin: 0.5rem 0;
+        }
+
+/* ===== Footer ===== */
+.site-footer {
+    margin-top: auto;
+    background: var(--cinza-escuro);
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .nav-list {
+        gap: 1rem;
+    }
+
+    .home-main {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-photo img {
+        margin: 0 auto;
+    }
+
+    .intro-text h1 {
+        font-size: 2rem;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
